@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management Fundamentals · PM Éire</title>
+<meta name="description" content="The plain English fundamentals of project management for small businesses and charities in Ireland. Animated charts, an interactive decision game, and a video walkthrough — not a wall of text.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fundamentals.css">
+</head>
+<body>
+
+<!-- Animated background -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <svg class="bg-sparkles" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <g class="sparkle-group">
+      <circle class="sparkle s1" cx="120" cy="180" r="2"/>
+      <circle class="sparkle s2" cx="340" cy="90"  r="1.5"/>
+      <circle class="sparkle s3" cx="600" cy="240" r="2.5"/>
+      <circle class="sparkle s4" cx="880" cy="140" r="2"/>
+      <circle class="sparkle s5" cx="1080" cy="320" r="1.5"/>
+      <circle class="sparkle s6" cx="220" cy="520" r="2"/>
+      <circle class="sparkle s7" cx="500" cy="600" r="2.5"/>
+      <circle class="sparkle s8" cx="780" cy="480" r="2"/>
+      <circle class="sparkle s9" cx="1020" cy="660" r="1.5"/>
+      <circle class="sparkle s10" cx="150" cy="720" r="2"/>
+    </g>
+  </svg>
+</div>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav-container" aria-label="Main navigation">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">◐</span>
+      <span class="logo-text">PM <em>Éire</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fundamentals.html" class="active">Fundamentals</a></li>
+      <li><a href="methodologies.html">Methodologies</a></li>
+      <li><a href="ai-for-business.html" class="nav-highlight"><i class="fa-solid fa-sparkles"></i> AI for Your Business</a></li>
+      <li><a href="tools.html">Tools & Resources</a></li>
+      <li><a href="connect.html" class="nav-connect"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <span class="eyebrow reveal">Chapter 1</span>
+  <h1 class="reveal">The <em>fundamentals</em>, in plain English.</h1>
+  <p class="reveal">If you've organised a charity fun run, launched a café, or moved an office, you've done project management. Here's the proper toolkit, with charts, a video and a game so you actually remember it.</p>
+</section>
+
+<div class="prose">
+
+  <!-- ================ STAT STRIP ================ -->
+  <div class="fund-stats reveal">
+    <div class="fund-stat">
+      <div class="fund-stat-num">$15bn</div>
+      <div class="fund-stat-label">Global PM software market in 2025. Most spend now comes from small teams, not enterprises.</div>
+    </div>
+    <div class="fund-stat">
+      <div class="fund-stat-num">+57.5%</div>
+      <div class="fund-stat-label">Growth in hybrid project management since 2020. Tribal knowledge no longer cuts it.</div>
+    </div>
+    <div class="fund-stat">
+      <div class="fund-stat-num">90%</div>
+      <div class="fund-stat-label">Of a project manager's time spent communicating. It is the skill above all others.</div>
+    </div>
+  </div>
+
+  <!-- ================ WHAT IS A PROJECT ================ -->
+  <h2>What is a project?</h2>
+  <p>A <strong>project</strong> has a clear start and end. Operations don't. Launching a new product is a project. Running the existing line is operations. The chart below shows where each one really differs.</p>
+
+  <div class="chart-section reveal">
+    <div class="chart-section-head">
+      <div>
+        <h3>Project vs Operations</h3>
+        <p>How the two differ across six attributes — hover the points for detail.</p>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall">
+      <canvas data-chart="pmVsOps"></canvas>
+    </div>
+    <div class="chart-takeaway">
+      <strong>Bottom line:</strong> Projects have an end, an owner, a deliverable and a budget. If your work has all four, you have a project — manage it like one.
+    </div>
+  </div>
+
+  <!-- ================ THE 5 PHASES — interactive ================ -->
+  <h2 id="phases">The 5 phases of any project</h2>
+  <p>Every project, from a Cork café brunch menu to building the Aviva Stadium, moves through these five phases. The depth changes; the sequence doesn't. <strong>Click any phase</strong> to expand it.</p>
+
+  <div class="phase-grid reveal">
+    <button class="phase-pill" data-target="phase-1" style="--phase-color:#fbbf24" type="button">
+      <span class="phase-pill-num">1</span>
+      <h4>Initiation</h4>
+      <p class="phase-tagline">Is this worth doing?</p>
+      <span class="phase-time"><i class="fa-regular fa-clock"></i> 2 to 4 hours</span>
+    </button>
+    <button class="phase-pill" data-target="phase-2" style="--phase-color:#ec4899" type="button">
+      <span class="phase-pill-num">2</span>
+      <h4>Planning</h4>
+      <p class="phase-tagline">How will we do it?</p>
+      <span class="phase-time"><i class="fa-regular fa-clock"></i> ~25% of total time</span>
+    </button>
+    <button class="phase-pill" data-target="phase-3" style="--phase-color:#3b82f6" type="button">
+      <span class="phase-pill-num">3</span>
+      <h4>Execution</h4>
+      <p class="phase-tagline">Do the actual work.</p>
+      <span class="phase-time"><i class="fa-regular fa-clock"></i> ~55% of total time</span>
+    </button>
+    <button class="phase-pill" data-target="phase-4" style="--phase-color:#10b981" type="button">
+      <span class="phase-pill-num">4</span>
+      <h4>Monitoring</h4>
+      <p class="phase-tagline">Are we on track?</p>
+      <span class="phase-time"><i class="fa-regular fa-clock"></i> Runs in parallel</span>
+    </button>
+    <button class="phase-pill" data-target="phase-5" style="--phase-color:#8b5cf6" type="button">
+      <span class="phase-pill-num">5</span>
+      <h4>Closing</h4>
+      <p class="phase-tagline">Wrap it up properly.</p>
+      <span class="phase-time"><i class="fa-regular fa-clock"></i> 30 to 60 minutes</span>
+    </button>
+  </div>
+
+  <div class="phase-detail-panel" id="phase-1">
+    <h4><i class="fa-solid fa-flag" style="color:#fbbf24"></i> Initiation — is this worth doing?</h4>
+    <p>The cheapest projects are the ones you kill here. Decide if the idea matches your goals, whether you can do it, and who needs to be involved.</p>
+    <div class="phase-out">
+      <div>
+        <h6>You walk out with</h6>
+        <ul>
+          <li>A one page project charter</li>
+          <li>A rough budget range</li>
+          <li>Top 3 risks identified</li>
+          <li>A nominated sponsor</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Skip this and</h6>
+        <ul>
+          <li>You commit money before agreement</li>
+          <li>Goalposts move every week</li>
+          <li>The team has no shared "why"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase-example">
+      <strong>Irish SME example:</strong> A Cork café owner wants weekend brunch. Initiation = costing ingredients, checking staffing, confirming the POS handles it, writing 5 lines on "why". 2 hours of work. Saves a month of chaos.
+    </div>
+  </div>
+
+  <div class="phase-detail-panel" id="phase-2">
+    <h4><i class="fa-solid fa-map" style="color:#ec4899"></i> Planning — how will we do it?</h4>
+    <p>Planning is where you find problems while they're still cheap. You don't need 200 pages — you need 5 things, done roughly, and revised weekly.</p>
+    <div class="phase-out">
+      <div>
+        <h6>A usable plan has</h6>
+        <ul>
+          <li>Work breakdown (tasks &amp; subtasks)</li>
+          <li>A schedule with milestones</li>
+          <li>Resource list (people, money, tools)</li>
+          <li>Comms plan (who hears what, when)</li>
+          <li>Risk register</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Watch for</h6>
+        <ul>
+          <li>Skipping risks "because they're theoretical"</li>
+          <li>Plans nobody on the team has read</li>
+          <li>Treating the plan as fixed forever</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase-example">
+      <strong>Quote:</strong> Planning isn't paperwork. It's solving problems before they show up.
+    </div>
+  </div>
+
+  <div class="phase-detail-panel" id="phase-3">
+    <h4><i class="fa-solid fa-person-running" style="color:#3b82f6"></i> Execution — do the work</h4>
+    <p>The longest phase. Most small teams spend 80% of their hours here. Your job shifts from planning to <strong>unblocking</strong> the team.</p>
+    <div class="phase-out">
+      <div>
+        <h6>You actually do</h6>
+        <ul>
+          <li>Coordinate people and resources</li>
+          <li>Run the agreed processes</li>
+          <li>Produce the deliverables</li>
+          <li>Handle change requests</li>
+          <li>Celebrate small wins (it matters)</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Watch for</h6>
+        <ul>
+          <li>Team drowning in meetings</li>
+          <li>Heroic individual effort masking process gaps</li>
+          <li>Scope quietly creeping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase-detail-panel" id="phase-4">
+    <h4><i class="fa-solid fa-chart-line" style="color:#10b981"></i> Monitoring — are we still on track?</h4>
+    <p>Runs <em>in parallel</em> with execution. Think of it as the project's radar (monitoring) and steering wheel (controlling).</p>
+    <div class="phase-out">
+      <div>
+        <h6>You actively check</h6>
+        <ul>
+          <li>Actual progress vs. the plan</li>
+          <li>Budget and resource use</li>
+          <li>Quality of deliverables</li>
+          <li>Emerging risks early</li>
+          <li>Stakeholder mood</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Where AI earns its keep</h6>
+        <ul>
+          <li>Summarising weekly status</li>
+          <li>Spotting trends in spend</li>
+          <li>Drafting funder updates</li>
+        </ul>
+      </div>
+    </div>
+    <div class="phase-example">
+      Most monitoring work is dull. All of it is handed off to AI beautifully — see the <a href="ai-for-business.html">AI playbook</a>.
+    </div>
+  </div>
+
+  <div class="phase-detail-panel" id="phase-5">
+    <h4><i class="fa-solid fa-trophy" style="color:#8b5cf6"></i> Closing — wrap it up properly</h4>
+    <p>Most teams skip closing. It costs them every time. A proper close is the highest leverage 30 minutes left in the project.</p>
+    <div class="phase-out">
+      <div>
+        <h6>You finish</h6>
+        <ul>
+          <li>Formal sign off from stakeholders</li>
+          <li>Admin (contracts, invoices, tools)</li>
+          <li>Handover to operations</li>
+          <li>One page lessons learned note</li>
+          <li>Thank yous to the team</li>
+        </ul>
+      </div>
+      <div>
+        <h6>Skip this and</h6>
+        <ul>
+          <li>Scope creep that never ends</li>
+          <li>Invoices unpaid for months</li>
+          <li>Same mistakes on the next project</li>
+          <li>Stale subscriptions costing you €100s/mo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================ CHART: TIME PER PHASE ================ -->
+  <div class="chart-section reveal">
+    <div class="chart-section-head">
+      <div>
+        <h3>Where the time actually goes</h3>
+        <p>Typical share of project effort across the five phases (small team baseline).</p>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap">
+      <canvas data-chart="timeBar"></canvas>
+    </div>
+    <div class="chart-takeaway">
+      <strong>The surprise:</strong> Planning is short, execution is long. Most teams instinctively skip planning to "save time" and pay for it 3× during execution.
+    </div>
+  </div>
+
+  <!-- ================ VIDEO: PM Fundamentals walkthrough ================ -->
+  <h2 id="video">Watch a fundamentals walkthrough</h2>
+  <p>If reading isn't your thing, Mike Clayton's "Fundamentals of Project Management: Ten Tips for Beginners" is one of the cleanest free explainers on YouTube. Plain English, real examples, no jargon.</p>
+
+  <div class="video-card reveal">
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/FIEl7S3GwDQ?rel=0&modestbranding=1"
+        title="Fundamentals of Project Management: Ten Tips for Beginners — Mike Clayton"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-meta">
+      <div class="video-meta-text">
+        <strong>Fundamentals of Project Management: Ten Tips for Beginners</strong>
+        <span>Mike Clayton · OnlinePMCourses · YouTube</span>
+      </div>
+      <div class="video-meta-tags">
+        <span class="pill"><i class="fa-solid fa-closed-captioning"></i> Captions</span>
+        <span class="pill"><i class="fa-regular fa-clock"></i> ~12 min</span>
+        <span class="pill"><i class="fa-solid fa-star"></i> Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================ DECISION GAME ================ -->
+  <h2 id="game">Now play it: save Maeve's brunch project</h2>
+  <p>Reading is one thing. Practising is another. You're now the project manager for a Cork café owner adding a weekend brunch. Make four decisions. Watch the <strong>time</strong>, <strong>budget</strong> and <strong>team morale</strong> bars react. Each choice teaches one fundamental.</p>
+
+  <div class="dg-wrap reveal">
+    <div class="dg-header">
+      <div class="dg-step" id="dgStep">Step 1 of 4</div>
+      <div class="dg-stats">
+        <div class="dg-stat">
+          <div class="dg-stat-label"><i class="fa-regular fa-clock"></i> Time <span class="dg-bar-num" id="dgTimeNum">100</span></div>
+          <div class="dg-bar"><div class="dg-bar-fill health-good" id="dgTimeBar"></div></div>
+        </div>
+        <div class="dg-stat">
+          <div class="dg-stat-label"><i class="fa-solid fa-euro-sign"></i> Budget <span class="dg-bar-num" id="dgBudgetNum">100</span></div>
+          <div class="dg-bar"><div class="dg-bar-fill health-good" id="dgBudgetBar"></div></div>
+        </div>
+        <div class="dg-stat">
+          <div class="dg-stat-label"><i class="fa-solid fa-users"></i> Morale <span class="dg-bar-num" id="dgMoraleNum">100</span></div>
+          <div class="dg-bar"><div class="dg-bar-fill health-good" id="dgMoraleBar"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dg-scenario">
+      <span class="dg-eyebrow" id="dgEyebrow">Initiation</span>
+      <h4 id="dgTitle">Loading…</h4>
+      <p id="dgBody"></p>
+    </div>
+
+    <div class="dg-choices" id="dgChoices"></div>
+
+    <div class="dg-feedback" id="dgFeedback"></div>
+
+    <div class="dg-end" id="dgEnd">
+      <div class="dg-end-emoji" id="dgEndEmoji">🏆</div>
+      <h3 id="dgEndTitle">Nicely done.</h3>
+      <p id="dgEndBody"></p>
+      <div class="dg-end-actions">
+        <button class="btn btn-ghost" id="dgReset" type="button"><i class="fa-solid fa-rotate-right"></i> Play again</button>
+        <a href="methodologies.html" class="btn btn-primary">Pick a methodology <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================ HYBRID GROWTH CHART ================ -->
+  <h2>Why it matters more in 2026</h2>
+  <p>Hybrid project management has overtaken Waterfall. AI has collapsed the cost of project admin. For Irish SMEs and charities, structured PM is no longer a "nice to have" — it's how you win grants and compete with bigger teams.</p>
+
+  <div class="chart-section reveal">
+    <div class="chart-section-head">
+      <div>
+        <h3>Hybrid is overtaking Waterfall</h3>
+        <p>Adoption among small and mid sized teams, 2020 to 2026 (estimated 2025/26).</p>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap">
+      <canvas data-chart="growth"></canvas>
+    </div>
+    <div class="chart-takeaway">
+      <strong>What this means for you:</strong> The "purist" approaches are losing. Most real Irish SMEs use a hybrid — Waterfall style planning with Agile or Kanban execution. Pick the right tool for the job, not the religion.
+    </div>
+  </div>
+
+  <!-- ================ TIME LOST CHART ================ -->
+  <div class="chart-section reveal">
+    <div class="chart-section-head">
+      <div>
+        <h3>The 13.7 hour problem</h3>
+        <p>Asana's "Anatomy of Work" study: knowledge workers lose 13.7 hours a week to scattered tools, status chasing and context switching.</p>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap">
+      <canvas data-chart="timeLost"></canvas>
+    </div>
+    <div class="chart-takeaway">
+      <strong>That's 89 working days a year.</strong> Even a free tool like Trello or Notion beats running everything from your inbox.
+    </div>
+  </div>
+
+  <!-- ================ SKILLS RADAR ================ -->
+  <h2>What a project manager actually does</h2>
+  <p>In a small team there's rarely a dedicated PM. The role is worn by the owner, a senior staffer, or whoever is best organised. Whoever it is, the work is the same — and communication beats every other skill.</p>
+
+  <div class="chart-section reveal">
+    <div class="chart-section-head">
+      <div>
+        <h3>The skills that matter most</h3>
+        <p>Where a project manager actually spends their week (relative emphasis).</p>
+      </div>
+    </div>
+    <div class="chart-canvas-wrap tall">
+      <canvas data-chart="skillsRadar"></canvas>
+    </div>
+    <div class="skills-legend">
+      <div class="skills-legend-item"><i class="fa-solid fa-comments"></i> Communication beats everything else</div>
+      <div class="skills-legend-item"><i class="fa-solid fa-people-group"></i> Leadership without authority</div>
+      <div class="skills-legend-item"><i class="fa-solid fa-stopwatch"></i> Time management for self &amp; team</div>
+      <div class="skills-legend-item"><i class="fa-solid fa-shield-halved"></i> Spotting risks before they hit</div>
+    </div>
+  </div>
+
+  <!-- ================ COMMON MISTAKES ================ -->
+  <h2>Common mistakes to avoid</h2>
+  <div class="mistakes-grid reveal">
+    <div class="mistake-mini">
+      <div class="mistake-icon"><i class="fa-solid fa-forward-fast"></i></div>
+      <h5>Skipping planning</h5>
+      <p>"Just start" → missed deadlines and overspend. Plan rough, plan often.</p>
+    </div>
+    <div class="mistake-mini">
+      <div class="mistake-icon"><i class="fa-solid fa-comment-slash"></i></div>
+      <h5>Assuming people understand</h5>
+      <p>Silence isn't agreement. Set comms cadence, channel and format up front.</p>
+    </div>
+    <div class="mistake-mini">
+      <div class="mistake-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <h5>Treating risk as someone else's job</h5>
+      <p>30 minutes of risk planning saves weeks of firefighting.</p>
+    </div>
+    <div class="mistake-mini">
+      <div class="mistake-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+      <h5>Running it from your inbox</h5>
+      <p>13.7 hours a week lost. Even free Trello or Notion beats email + memory.</p>
+    </div>
+  </div>
+
+  <!-- ================ NEXT STEPS ================ -->
+  <h2>Where to go next</h2>
+  <p>You've got the fundamentals, the charts, and a game scar or two. Now pick your approach.</p>
+
+  <div class="paths-grid" style="margin-top:2em">
+    <a href="methodologies.html" class="path-card reveal">
+      <div class="path-num">→</div>
+      <h3>Pick a methodology</h3>
+      <p>Agile, Waterfall, Scrum, Kanban or Hybrid? Compare them with an interactive chart.</p>
+      <span class="path-go">Compare methods <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+    <a href="ai-for-business.html" class="path-card path-card-hero reveal">
+      <div class="path-num">★</div>
+      <h3>AI for your business</h3>
+      <p>The practical playbook, copy paste prompts and workflows Irish SMEs are using this week.</p>
+      <span class="path-go">Open the playbook <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+  </div>
+
+</div>
+
+<div style="height:80px"></div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-footer">
+        <span class="logo-mark">◐</span>
+        <span class="logo-text">PM <em>Éire</em></span>
+      </a>
+      <p>Practical project management for small businesses and charities in Ireland.</p>
+    </div>
+    <div>
+      <h4>Guide</h4>
+      <ul>
+        <li><a href="fundamentals.html">Fundamentals</a></li>
+        <li><a href="methodologies.html">Methodologies</a></li>
+        <li><a href="ai-for-business.html">AI for business</a></li>
+        <li><a href="tools.html">Tools & resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For Irish SMEs</h4>
+      <ul>
+        <li><a href="#" onclick="return false;">Local Enterprise Office</a></li>
+        <li><a href="#" onclick="return false;">Charity regulator</a></li>
+        <li><a href="#" onclick="return false;">GDPR for small teams</a></li>
+        <li><a href="references.html">Sources &amp; references</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in touch</h4>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/divyanshranaa" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" aria-label="Portfolio"><i class="fa-solid fa-globe"></i></a></li>
+        <li><a href="mailto:ranadivyansh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-base container">
+    <p>© 2026 PM Éire. Made with <i class="fa-solid fa-heart" style="color:#ec4899"></i> in Ireland. <a href="references.html">Sources &amp; references</a>.</p>
+  </div>
+</footer>
+
+<!-- Chart.js for animated charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/fundamentals.js"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect with Divyansh · PM Éire</title>
+<meta name="description" content="Get in touch with Divyansh Rana, the project manager behind PM Éire. Available for consulting, speaking, and collaboration with Irish SMEs and charities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/connect.css">
+</head>
+<body>
+
+<!-- Advanced animated background -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <svg class="bg-sparkles" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <g class="sparkle-group">
+      <circle class="sparkle s1" cx="120" cy="180" r="2"/>
+      <circle class="sparkle s2" cx="340" cy="90"  r="1.5"/>
+      <circle class="sparkle s3" cx="600" cy="240" r="2.5"/>
+      <circle class="sparkle s4" cx="880" cy="140" r="2"/>
+      <circle class="sparkle s5" cx="1080" cy="320" r="1.5"/>
+      <circle class="sparkle s6" cx="220" cy="520" r="2"/>
+      <circle class="sparkle s7" cx="500" cy="600" r="2.5"/>
+      <circle class="sparkle s8" cx="780" cy="480" r="2"/>
+      <circle class="sparkle s9" cx="1020" cy="660" r="1.5"/>
+      <circle class="sparkle s10" cx="150" cy="720" r="2"/>
+    </g>
+  </svg>
+</div>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav-container" aria-label="Main navigation">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">◐</span>
+      <span class="logo-text">PM <em>Éire</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fundamentals.html">Fundamentals</a></li>
+      <li><a href="methodologies.html">Methodologies</a></li>
+      <li><a href="ai-for-business.html" class="nav-highlight"><i class="fa-solid fa-sparkles"></i> AI for Your Business</a></li>
+      <li><a href="tools.html">Tools & Resources</a></li>
+      <li><a href="connect.html" class="nav-connect active"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="connect-hero">
+  <div class="container">
+    <div class="connect-hero-grid">
+
+      <div class="profile-card reveal">
+        <div class="profile-avatar">
+          <!-- Decorative ring centered on the avatar -->
+          <div class="profile-ring" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs>
+                <path id="textcircle" d="M 100, 100 m -85, 0 a 85,85 0 1,1 170,0 a 85,85 0 1,1 -170,0" />
+              </defs>
+              <text font-family="Inter" font-size="11" font-weight="600" fill="#db2777" letter-spacing="3">
+                <textPath href="#textcircle">
+                  PROJECT MANAGER · AI FOR SMALL BUSINESS · DUBLIN, IRELAND · 
+                </textPath>
+              </text>
+            </svg>
+          </div>
+
+          <img src="images/divyansh.jpg" alt="Divyansh Rana" class="avatar-img">
+          <span class="avatar-status" title="Available for projects"></span>
+        </div>
+
+        <div class="profile-info">
+          <span class="profile-tag">
+            <span class="dot"></span> Available for new projects
+          </span>
+          <h1>Divyansh Rana</h1>
+          <p class="profile-role">Project Manager · Building <em>PM Éire</em></p>
+          <p class="profile-location">
+            <i class="fa-solid fa-location-dot"></i> Based in Ireland ·
+            <i class="fa-regular fa-clock"></i> <span id="localTime">—</span> local time
+          </p>
+        </div>
+
+        <div class="profile-socials">
+          <a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" aria-label="Portfolio" class="social-btn" data-tip="Portfolio">
+            <i class="fa-solid fa-globe"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/divyanshranaa" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn" data-tip="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:ranadivyansh33@gmail.com" aria-label="Email" class="social-btn" data-tip="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="connect-hero-copy">
+        <span class="eyebrow reveal">Connect with me</span>
+        <h2 class="reveal">Hi, I'm Divyansh.<br>Let's build something <em>useful.</em></h2>
+        <p class="reveal">
+          I'm the project manager behind <strong>PM Éire</strong>. I help Irish small businesses and charities
+          run projects properly and, more importantly, bring AI into their day to day work without the hype.
+        </p>
+        <p class="reveal">
+          If you run a small team and you're tired of firefighting, losing hours to admin, or staring at the
+          same grant application on a Sunday night, I'd love to hear from you.
+        </p>
+
+        <div class="hero-chips reveal">
+          <span class="chip"><i class="fa-solid fa-briefcase"></i> PM consulting</span>
+          <span class="chip"><i class="fa-solid fa-robot"></i> AI workflows for SMEs</span>
+          <span class="chip"><i class="fa-solid fa-microphone"></i> Talks &amp; workshops</span>
+        </div>
+
+        <div class="hero-actions reveal">
+          <a href="#contact-form" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send a message</a>
+          <a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" class="btn btn-ghost">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View full portfolio
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What I can help with</span>
+      <h2>Short engagements. <em>Real outcomes.</em></h2>
+    </div>
+
+    <div class="service-grid">
+      <article class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>Project rescue</h3>
+        <p>Your project is stuck, over budget, or about to miss a deadline. I'll audit it in a week, reset scope and delivery plan, and get you unblocked.</p>
+        <span class="service-meta">1 to 4 week engagement</span>
+      </article>
+
+      <article class="service-card reveal service-featured">
+        <div class="service-ribbon">Most requested</div>
+        <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <h3>AI rollout for your team</h3>
+        <p>A structured 30 day programme to embed AI into your weekly workflows. Prompt libraries, a one page policy, team training, measurable time savings.</p>
+        <span class="service-meta">30 days · fixed price</span>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-people-group"></i></div>
+        <h3>Fractional PM</h3>
+        <p>A few days a month as your part time project manager. Perfect for small Irish SMEs and charities that need the structure without the full time salary.</p>
+        <span class="service-meta">Ongoing · monthly retainer</span>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+        <h3>Workshops &amp; talks</h3>
+        <p>Hands on sessions for your team, LEO event, charity forum, or conference. From "AI in 60 minutes" to full day PM fundamentals.</p>
+        <span class="service-meta">Half day or full day</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section section-alt" id="contact-form">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-aside reveal">
+        <span class="eyebrow">Send a message</span>
+        <h2>Three quick ways to reach me.</h2>
+        <p>Pick whichever's easiest. I try to reply within one working day.</p>
+
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:ranadivyansh33@gmail.com">ranadivyansh33@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div>
+              <strong>LinkedIn</strong>
+              <a href="https://www.linkedin.com/in/divyanshranaa" target="_blank" rel="noopener">linkedin.com/in/divyanshranaa</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon"><i class="fa-solid fa-globe"></i></div>
+            <div>
+              <strong>Portfolio</strong>
+              <a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener">View full portfolio</a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <h3>Tell me about your project</h3>
+        <p class="form-sub">All fields are optional, except the ones marked with an asterisk.</p>
+
+        <!-- Honeypot: hidden from humans, bots fill it and get rejected -->
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <input type="hidden" name="_subject" value="PM Éire enquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-row">
+          <div class="field">
+            <label for="cName">Your name <span>*</span></label>
+            <input type="text" id="cName" name="name" required>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email <span>*</span></label>
+            <input type="email" id="cEmail" name="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="cOrg">Organisation</label>
+          <input type="text" id="cOrg" name="organisation" placeholder="e.g. your business or charity name">
+        </div>
+
+        <div class="field">
+          <label>What do you need? <span>*</span></label>
+          <div class="chip-choices" data-q="topic">
+            <button type="button" class="choice-chip" data-val="rescue">Project rescue</button>
+            <button type="button" class="choice-chip" data-val="ai">AI rollout</button>
+            <button type="button" class="choice-chip" data-val="fractional">Fractional PM</button>
+            <button type="button" class="choice-chip" data-val="workshop">Workshop / talk</button>
+            <button type="button" class="choice-chip" data-val="other">Something else</button>
+          </div>
+          <input type="hidden" id="cTopic" name="topic" required>
+        </div>
+
+        <div class="field">
+          <label for="cMsg">Message <span>*</span></label>
+          <textarea id="cMsg" name="message" rows="5" required placeholder="A few lines on what you're working on, what's stuck, and what 'done' would look like."></textarea>
+          <div class="char-count"><span id="charCount">0</span> / 600</div>
+        </div>
+
+        <div class="field-row">
+          <label class="checkbox">
+            <input type="checkbox" id="cConsent" required>
+            <span class="check-mark"></span>
+            <span>I'm okay with you storing my message to reply to it. <small>(GDPR safe. Not used for anything else.)</small></span>
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-submit">
+          <span class="btn-label"><i class="fa-solid fa-paper-plane"></i> Send message</span>
+          <span class="btn-loading"><i class="fa-solid fa-circle-notch fa-spin"></i> Sending…</span>
+          <span class="btn-success"><i class="fa-solid fa-check"></i> Message sent!</span>
+        </button>
+
+        <p class="form-msg" id="formMsg" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container" style="max-width: 780px">
+    <div class="section-head">
+      <span class="eyebrow">Quick answers</span>
+      <h2>Before you ask…</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq">
+        <summary>I'm not in Ireland, can we still work together?</summary>
+        <p>Yes, remotely. Most of my client work is via Zoom and Teams anyway. That said, the PM Éire guide is written from and for the Irish context (LEO, charity regulator, GDPR), so it'll be most immediately useful to teams here.</p>
+      </details>
+      <details class="faq">
+        <summary>What does an engagement typically look like?</summary>
+        <p>It starts with a free 20 minute call. If there's a fit, I send a short scoping doc with a fixed fee and a clear deliverable. Most engagements run for 1 to 4 weeks; fractional PM work is ongoing.</p>
+      </details>
+      <details class="faq">
+        <summary>Are you available for talks and workshops?</summary>
+        <p>Very much so. I regularly run sessions at LEO events, charity forums and company offsites. The "AI in 60 minutes for small Irish teams" workshop is the most requested.</p>
+      </details>
+      <details class="faq">
+        <summary>Will my conversation be confidential?</summary>
+        <p>Always. I won't share names or specifics without written permission. If I ever want to write a case study, you'll see and approve it first.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA -->
+<section class="section big-cta-band">
+  <div class="container big-cta-inner reveal">
+    <h2>Let's get your projects moving.</h2>
+    <p>Drop me a line. Even if we don't end up working together, I'll point you toward something useful.</p>
+    <div class="hero-actions">
+      <a href="mailto:ranadivyansh33@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> ranadivyansh33@gmail.com</a>
+      <a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" class="btn btn-outline">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> View full portfolio
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-footer">
+        <span class="logo-mark">◐</span>
+        <span class="logo-text">PM <em>Éire</em></span>
+      </a>
+      <p>Practical project management for small businesses and charities in Ireland. Built by Divyansh Rana.</p>
+    </div>
+    <div>
+      <h4>Guide</h4>
+      <ul>
+        <li><a href="fundamentals.html">Fundamentals</a></li>
+        <li><a href="methodologies.html">Methodologies</a></li>
+        <li><a href="ai-for-business.html">AI for business</a></li>
+        <li><a href="tools.html">Tools & resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For Irish SMEs</h4>
+      <ul>
+        <li><a href="#" onclick="return false;">Local Enterprise Office</a></li>
+        <li><a href="#" onclick="return false;">Charity regulator</a></li>
+        <li><a href="#" onclick="return false;">GDPR for small teams</a></li>
+        <li><a href="references.html">Sources &amp; references</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in touch</h4>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/divyanshranaa" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" aria-label="Portfolio"><i class="fa-solid fa-globe"></i></a></li>
+        <li><a href="mailto:ranadivyansh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-base container">
+    <p>© 2026 PM Éire. Made with <i class="fa-solid fa-heart" style="color:#ec4899"></i> in Ireland. <a href="references.html">Sources &amp; references</a>.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/connect.js"></script>
+</body>
+</html>

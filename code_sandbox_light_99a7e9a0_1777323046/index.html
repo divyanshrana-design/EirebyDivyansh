@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PM Éire · The Practical Project Management Guide for Irish Small Businesses & Charities</title>
+<meta name="description" content="An accessible, practical project management guide built for small businesses and charities in Ireland. Learn the fundamentals, compare methodologies, and discover how to use AI to get stuff done better.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+<!-- Advanced animated background -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <svg class="bg-sparkles" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <g class="sparkle-group">
+      <circle class="sparkle s1" cx="120" cy="180" r="2"/>
+      <circle class="sparkle s2" cx="340" cy="90"  r="1.5"/>
+      <circle class="sparkle s3" cx="600" cy="240" r="2.5"/>
+      <circle class="sparkle s4" cx="880" cy="140" r="2"/>
+      <circle class="sparkle s5" cx="1080" cy="320" r="1.5"/>
+      <circle class="sparkle s6" cx="220" cy="520" r="2"/>
+      <circle class="sparkle s7" cx="500" cy="600" r="2.5"/>
+      <circle class="sparkle s8" cx="780" cy="480" r="2"/>
+      <circle class="sparkle s9" cx="1020" cy="660" r="1.5"/>
+      <circle class="sparkle s10" cx="150" cy="720" r="2"/>
+    </g>
+  </svg>
+</div>
+
+<!-- Custom cursor glow -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Navigation -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav-container" aria-label="Main navigation">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">◐</span>
+      <span class="logo-text">PM <em>Éire</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="fundamentals.html">Fundamentals</a></li>
+      <li><a href="methodologies.html">Methodologies</a></li>
+      <li><a href="ai-for-business.html" class="nav-highlight"><i class="fa-solid fa-sparkles"></i> AI for Your Business</a></li>
+      <li><a href="tools.html">Tools & Resources</a></li>
+      <li><a href="connect.html" class="nav-connect"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <h1 class="hero-title reveal">
+      Project management<br>
+      that actually <em class="hero-em">gets stuff done.</em>
+    </h1>
+    <p class="hero-subtitle reveal">
+      A practical, no-fluff guide for small businesses and charities across Ireland.
+      Learn the basics, pick the right method, and, most importantly,
+      discover how to plug AI into your day to day without the hype.
+    </p>
+    <div class="hero-cta reveal">
+      <a href="ai-for-business.html" class="btn btn-primary">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        Start with AI for Business
+      </a>
+      <a href="fundamentals.html" class="btn btn-ghost">
+        <i class="fa-solid fa-book-open"></i>
+        Learn the fundamentals
+      </a>
+    </div>
+
+    <!-- Animated stats -->
+    <div class="hero-stats reveal">
+      <div class="stat">
+        <div class="stat-num" data-count="13.7">0</div>
+        <div class="stat-label">hours/week lost to scattered work<sup>*</sup></div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="57.5" data-suffix="%">0</div>
+        <div class="stat-label">growth in hybrid PM since 2020</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-count="90" data-suffix="%">0</div>
+        <div class="stat-label">of a PM's time is communication</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating kanban preview -->
+  <div class="hero-kanban reveal" aria-hidden="true">
+    <div class="kb-col">
+      <div class="kb-head"><span class="dot dot-pink"></span> To do</div>
+      <div class="kb-card">Autumn newsletter</div>
+      <div class="kb-card">Grant draft</div>
+    </div>
+    <div class="kb-col">
+      <div class="kb-head"><span class="dot dot-amber"></span> Doing</div>
+      <div class="kb-card kb-active">
+        <strong>Website refresh</strong>
+        <div class="kb-meta"><i class="fa-solid fa-robot"></i> AI drafting copy…</div>
+      </div>
+      <div class="kb-card">Volunteer rota</div>
+    </div>
+    <div class="kb-col">
+      <div class="kb-head"><span class="dot dot-green"></span> Done</div>
+      <div class="kb-card kb-done">Q3 budget review</div>
+      <div class="kb-card kb-done">Supplier contracts</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS GUIDE -->
+<section class="section section-alt" id="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why another guide?</span>
+      <h2>Most PM content is written for Fortune 500s. <em>This one isn't.</em></h2>
+      <p class="section-lead">
+        If you run a 4 person café in Galway, a charity in Limerick, or a two cofounder
+        software shop in Dublin, the advice online rarely fits. We've rewritten it for you.
+      </p>
+    </div>
+
+    <div class="why-grid">
+      <article class="why-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-shop"></i></div>
+        <h3>Written for small teams</h3>
+        <p>No 40 page PRINCE2 deep dives. Real examples from Irish SMEs and community groups, the kind of projects you actually run.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-euro-sign"></i></div>
+        <h3>Budget aware</h3>
+        <p>We flag free and low cost tools first. When we do recommend paid software, we show the Irish relevant pricing.</p>
+      </article>
+      <article class="why-card reveal why-card-featured">
+        <div class="why-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>AI first, not AI hyped</h3>
+        <p>We don't just say "use AI." We show you the exact prompts, workflows and tools that save a small team hours every week.</p>
+        <a href="ai-for-business.html" class="why-link">See the AI playbook <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-universal-access"></i></div>
+        <h3>Accessible by design</h3>
+        <p>Readable typography, keyboard navigation, captions on video, transcripts for audio. Because everyone on your team should be able to use it.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-photo-film"></i></div>
+        <h3>Mixed media</h3>
+        <p>Written guides, short videos, an audio primer, and downloadable templates. Learn the way that suits you.</p>
+      </article>
+      <article class="why-card reveal">
+        <div class="why-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+        <h3>Irish context</h3>
+        <p>References to LEO supports, charity regulator requirements, GDPR for small teams, and the realities of a small domestic market.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING PATHS -->
+<section class="section" id="paths">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Choose your path</span>
+      <h2>Where would you like to start?</h2>
+    </div>
+
+    <div class="paths-grid">
+      <a href="fundamentals.html" class="path-card reveal">
+        <div class="path-num">01</div>
+        <h3>The Fundamentals</h3>
+        <p>What project management actually is, the 5 phases, and how it differs from just "running the business."</p>
+        <ul class="path-list">
+          <li><i class="fa-solid fa-check"></i> Plain English definitions</li>
+          <li><i class="fa-solid fa-check"></i> The 5 phases visualised</li>
+          <li><i class="fa-solid fa-check"></i> PM vs. general management</li>
+        </ul>
+        <span class="path-go">Start here <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="methodologies.html" class="path-card reveal">
+        <div class="path-num">02</div>
+        <h3>Pick a Methodology</h3>
+        <p>Agile, Waterfall, Scrum, Kanban or Hybrid? Use our interactive picker to find what fits your team.</p>
+        <ul class="path-list">
+          <li><i class="fa-solid fa-check"></i> Side by side comparison</li>
+          <li><i class="fa-solid fa-check"></i> Interactive method picker</li>
+          <li><i class="fa-solid fa-check"></i> Irish SME examples</li>
+        </ul>
+        <span class="path-go">Compare methods <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="ai-for-business.html" class="path-card path-card-hero reveal">
+        <div class="path-ribbon">Most popular</div>
+        <div class="path-num">03</div>
+        <h3>AI for Your Business</h3>
+        <p>The main event. Practical ways Irish small businesses and charities are using AI to save hours every week, with prompts, tools and workflows.</p>
+        <ul class="path-list">
+          <li><i class="fa-solid fa-check"></i> Ready to use prompts</li>
+          <li><i class="fa-solid fa-check"></i> AI inside your PM tool</li>
+          <li><i class="fa-solid fa-check"></i> Safety & GDPR for SMEs</li>
+        </ul>
+        <span class="path-go">Open the AI playbook <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="tools.html" class="path-card reveal">
+        <div class="path-num">04</div>
+        <h3>Tools & Resources</h3>
+        <p>Software, templates, a short video primer, and an audio explainer. Everything you need in one place.</p>
+        <ul class="path-list">
+          <li><i class="fa-solid fa-check"></i> Software side by side</li>
+          <li><i class="fa-solid fa-check"></i> Downloadable templates</li>
+          <li><i class="fa-solid fa-check"></i> Video + audio guide</li>
+        </ul>
+        <span class="path-go">Browse resources <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- THE 5 PHASES TEASER -->
+<section class="section section-alt" id="phases">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The 5 phases</span>
+      <h2>Every project, from a market stall launch to a new grant programme, moves through these.</h2>
+    </div>
+
+    <div class="phases-timeline">
+      <div class="phase-step reveal" data-phase="1">
+        <div class="phase-circle"><i class="fa-solid fa-flag"></i></div>
+        <h4>Initiation</h4>
+        <p>Decide if the project is worth doing. Write a one page charter.</p>
+      </div>
+      <div class="phase-step reveal" data-phase="2">
+        <div class="phase-circle"><i class="fa-solid fa-map"></i></div>
+        <h4>Planning</h4>
+        <p>Break it down, schedule it, spot the risks, agree how you'll communicate.</p>
+      </div>
+      <div class="phase-step reveal" data-phase="3">
+        <div class="phase-circle"><i class="fa-solid fa-person-running"></i></div>
+        <h4>Execution</h4>
+        <p>Do the work. Unblock the team. Celebrate the small wins.</p>
+      </div>
+      <div class="phase-step reveal" data-phase="4">
+        <div class="phase-circle"><i class="fa-solid fa-chart-line"></i></div>
+        <h4>Monitor & Control</h4>
+        <p>Check progress, adjust scope, catch problems early.</p>
+      </div>
+      <div class="phase-step reveal" data-phase="5">
+        <div class="phase-circle"><i class="fa-solid fa-trophy"></i></div>
+        <h4>Closing</h4>
+        <p>Hand over, write down the lessons, thank the team.</p>
+      </div>
+    </div>
+
+    <div class="phases-cta">
+      <a href="fundamentals.html" class="btn btn-outline">Read the full walkthrough <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE KANBAN GAME (moved between Phases and AI Teaser) -->
+<section class="section" id="game">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Try it yourself</span>
+      <h2>Run a real project. <em>In your browser.</em></h2>
+      <p class="section-lead">Drag the task cards into the correct phase. Each correct move teaches you one thing about how project management actually works.</p>
+    </div>
+
+    <div class="kb-game reveal">
+      <!-- Stats bar -->
+      <div class="kb-game-bar">
+        <div class="kb-stat">
+          <span class="kb-stat-label">Progress</span>
+          <div class="kb-stat-bar"><span id="gameBar"></span></div>
+          <span class="kb-stat-num"><span id="gameDone">0</span> / <span id="gameTotal">0</span></span>
+        </div>
+        <div class="kb-stat-group">
+          <div class="kb-score" title="Score">
+            <i class="fa-solid fa-trophy"></i>
+            <span id="gameScore">0</span>
+          </div>
+          <div class="kb-score kb-streak" title="Correct streak">
+            <i class="fa-solid fa-fire"></i>
+            <span id="gameStreak">0</span>
+          </div>
+          <button class="btn btn-ghost kb-reset" id="gameReset" type="button">
+            <i class="fa-solid fa-rotate-right"></i> Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- The board -->
+      <div class="kb-board" id="kbBoard">
+        <div class="kb-column" data-phase="initiation">
+          <div class="kb-col-top" style="--accent:#f59e0b">
+            <div class="kb-col-title">
+              <span class="kb-col-num">01</span>
+              <div>
+                <h4>Initiation</h4>
+                <p>Is it worth doing?</p>
+              </div>
+            </div>
+            <span class="kb-col-count" data-count="0">0</span>
+          </div>
+          <div class="kb-dropzone" data-phase="initiation"></div>
+        </div>
+
+        <div class="kb-column" data-phase="planning">
+          <div class="kb-col-top" style="--accent:#ec4899">
+            <div class="kb-col-title">
+              <span class="kb-col-num">02</span>
+              <div>
+                <h4>Planning</h4>
+                <p>How will we do it?</p>
+              </div>
+            </div>
+            <span class="kb-col-count" data-count="0">0</span>
+          </div>
+          <div class="kb-dropzone" data-phase="planning"></div>
+        </div>
+
+        <div class="kb-column" data-phase="execution">
+          <div class="kb-col-top" style="--accent:#3b82f6">
+            <div class="kb-col-title">
+              <span class="kb-col-num">03</span>
+              <div>
+                <h4>Execution</h4>
+                <p>Do the work.</p>
+              </div>
+            </div>
+            <span class="kb-col-count" data-count="0">0</span>
+          </div>
+          <div class="kb-dropzone" data-phase="execution"></div>
+        </div>
+
+        <div class="kb-column" data-phase="monitoring">
+          <div class="kb-col-top" style="--accent:#10b981">
+            <div class="kb-col-title">
+              <span class="kb-col-num">04</span>
+              <div>
+                <h4>Monitor</h4>
+                <p>Are we on track?</p>
+              </div>
+            </div>
+            <span class="kb-col-count" data-count="0">0</span>
+          </div>
+          <div class="kb-dropzone" data-phase="monitoring"></div>
+        </div>
+
+        <div class="kb-column" data-phase="closing">
+          <div class="kb-col-top" style="--accent:#8b5cf6">
+            <div class="kb-col-title">
+              <span class="kb-col-num">05</span>
+              <div>
+                <h4>Closing</h4>
+                <p>Wrap it up.</p>
+              </div>
+            </div>
+            <span class="kb-col-count" data-count="0">0</span>
+          </div>
+          <div class="kb-dropzone" data-phase="closing"></div>
+        </div>
+      </div>
+
+      <!-- Task pool -->
+      <div class="kb-pool" id="kbPool">
+        <div class="kb-pool-head">
+          <div>
+            <strong>Incoming tasks</strong>
+            <p>A charity in Galway is running a Christmas fundraiser. Drag each task into the phase where it belongs.</p>
+          </div>
+          <span class="kb-pool-hint" id="kbHint">
+            <i class="fa-solid fa-hand-pointer"></i> Drag &amp; drop
+          </span>
+        </div>
+        <div class="kb-pool-cards" id="kbPoolCards"></div>
+      </div>
+
+      <!-- Toast / feedback -->
+      <div class="kb-toast" id="kbToast" aria-live="polite"></div>
+
+      <!-- Win screen -->
+      <div class="kb-win" id="kbWin">
+        <div class="kb-win-inner">
+          <div class="kb-win-emoji">🏆</div>
+          <h3>Nicely done.</h3>
+          <p>You just walked through the full project management lifecycle. You scored <strong><span id="kbWinScore">0</span></strong> points with a best streak of <strong><span id="kbWinStreak">0</span></strong>.</p>
+          <div class="kb-win-actions">
+            <button class="btn btn-ghost" id="kbWinReset" type="button"><i class="fa-solid fa-rotate-right"></i> Play again</button>
+            <a href="fundamentals.html" class="btn btn-primary"><i class="fa-solid fa-book-open"></i> Read the full guide</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI TEASER -->
+<section class="section ai-teaser" id="ai-teaser">
+  <div class="container ai-teaser-grid">
+    <div class="ai-teaser-copy reveal">
+      <span class="eyebrow eyebrow-white">The main event</span>
+      <h2>Using AI in your small business, <em>without the hype</em></h2>
+      <p>
+        The global PM software market will top <strong>$15bn in 2025</strong>, and nearly all the leading tools
+        now have AI built in. For a 5 person team in Cork or a charity in Sligo, that's not a nice to have,
+        it's how you compete with organisations ten times your size.
+      </p>
+      <p>
+        Our AI playbook is built around the real jobs you actually do each week:
+        writing quotes, chasing invoices, planning events, reporting to funders,
+        drafting social posts, onboarding a new staff member.
+      </p>
+      <a href="ai-for-business.html" class="btn btn-primary btn-light">
+        Open the AI playbook <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="ai-teaser-demo reveal">
+      <div class="chat-window">
+        <div class="chat-head">
+          <span class="chat-dot"></span>
+          <span class="chat-dot"></span>
+          <span class="chat-dot"></span>
+          <span class="chat-title">PM Assistant · Live demo</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="chat-msg chat-user">Help me plan our Christmas fundraiser in Galway.</div>
+          <div class="chat-msg chat-ai" data-typing="Here's a 6-week plan broken into 4 workstreams: venue & logistics, sponsorship, marketing, and volunteer rota. Want me to turn each into tasks?"></div>
+          <div class="chat-msg chat-user">Yes, and flag any GDPR risks.</div>
+          <div class="chat-msg chat-ai" data-typing="Done. 23 tasks added. GDPR note: collect attendee emails via a consent tickbox form, store in your CRM only, and delete after the event unless they opt in."></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA / RESOURCES -->
+<section class="section" id="media">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Learn your way</span>
+      <h2>Read it, watch it, or listen on the commute.</h2>
+    </div>
+
+    <div class="media-grid">
+      <article class="media-card reveal">
+        <div class="media-thumb media-thumb-img">
+          <img src="images/pm-handbook.jpg" alt="The small team PM handbook cover" loading="lazy">
+          <span class="media-thumb-badge"><i class="fa-solid fa-book-open-reader"></i></span>
+        </div>
+        <div class="media-body">
+          <span class="media-tag">Written guide</span>
+          <h3>The small team PM handbook</h3>
+          <p>A 15 minute read covering everything from your first charter to closing a project properly.</p>
+          <a href="fundamentals.html" class="media-link">Read now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="media-card reveal">
+        <div class="media-thumb media-thumb-watch">
+          <i class="fa-solid fa-circle-play"></i>
+        </div>
+        <div class="media-body">
+          <span class="media-tag">Video</span>
+          <h3>PM in 8 minutes</h3>
+          <p>A short, captioned video covering the five phases with examples from Irish SMEs.</p>
+          <a href="tools.html#video" class="media-link">Watch the video <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="media-card reveal">
+        <div class="media-thumb media-thumb-img">
+          <img src="images/podcast-cover.jpg" alt="AI Ireland Podcast cover art" loading="lazy">
+          <span class="media-thumb-badge"><i class="fa-solid fa-headphones"></i></span>
+        </div>
+        <div class="media-body">
+          <span class="media-tag">Audio</span>
+          <h3>The AI for SME primer</h3>
+          <p>A 12 minute audio primer, perfect for the drive between meetings. Full transcript included.</p>
+          <a href="tools.html#audio" class="media-link">Listen now <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT WITH ME CTA -->
+<section class="section cta-band connect-cta">
+  <div class="container cta-connect-inner">
+    <div class="cta-connect-text reveal">
+      <span class="eyebrow">Built by one person</span>
+      <h2>Want to chat about your project?</h2>
+      <p>I'm Divyansh, the project manager behind PM Éire. If you run a small team in Ireland and could use a hand, I'd love to hear from you.</p>
+    </div>
+    <div class="cta-connect-actions reveal">
+      <a href="connect.html" class="btn btn-primary btn-large">
+        <i class="fa-solid fa-paper-plane"></i> Connect with me
+      </a>
+      <a href="mailto:ranadivyansh33@gmail.com" class="btn btn-ghost btn-large">
+        <i class="fa-solid fa-envelope"></i> Send an email
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-footer">
+        <span class="logo-mark">◐</span>
+        <span class="logo-text">PM <em>Éire</em></span>
+      </a>
+      <p>Practical project management for small businesses and charities in Ireland.</p>
+    </div>
+    <div>
+      <h4>Guide</h4>
+      <ul>
+        <li><a href="fundamentals.html">Fundamentals</a></li>
+        <li><a href="methodologies.html">Methodologies</a></li>
+        <li><a href="ai-for-business.html">AI for business</a></li>
+        <li><a href="tools.html">Tools & resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For Irish SMEs</h4>
+      <ul>
+        <li><a href="#" onclick="return false;">Local Enterprise Office links</a></li>
+        <li><a href="#" onclick="return false;">Charity regulator basics</a></li>
+        <li><a href="#" onclick="return false;">GDPR for small teams</a></li>
+        <li><a href="references.html">Sources &amp; references</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in touch</h4>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/divyanshranaa" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" aria-label="Portfolio"><i class="fa-solid fa-globe"></i></a></li>
+        <li><a href="mailto:ranadivyansh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-base container">
+    <p>© 2026 PM Éire. Made with <i class="fa-solid fa-heart" style="color:#ec4899"></i> in Ireland. <a href="references.html">Sources &amp; references</a>.</p>
+    <p><small>*Asana "Anatomy of Work" research. Knowledge workers lose 13.7 hours weekly to scattered tools.</small></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

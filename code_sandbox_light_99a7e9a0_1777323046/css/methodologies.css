@@ -1,0 +1,388 @@
+/* =====================================================
+   METHODOLOGIES PAGE — interactive comparison
+   ===================================================== */
+
+/* ---------- Comparison Hub ---------- */
+.compare-hub {
+  background: linear-gradient(135deg, #fff 0%, #fff5f9 100%);
+  border: 2px solid var(--pink-200);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 50px;
+}
+.compare-hub-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.compare-hub-head h3 {
+  font-size: 1.4rem;
+  margin: 0 0 4px;
+}
+.compare-hub-head p {
+  margin: 0;
+  color: var(--ink-500);
+  font-size: 0.95rem;
+}
+.compare-hub-toggle {
+  display: inline-flex;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+  gap: 2px;
+}
+.compare-hub-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--ink-700);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .2s;
+}
+.compare-hub-toggle button.active {
+  background: var(--grad-pink);
+  color: white;
+}
+
+/* Pills row */
+.method-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.method-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid var(--pink-100);
+  background: white;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  cursor: pointer;
+  transition: all .2s var(--ease-out);
+  font-family: inherit;
+  position: relative;
+}
+.method-pill::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--m-color, var(--pink-500));
+}
+.method-pill:hover {
+  border-color: var(--pink-400);
+  transform: translateY(-2px);
+}
+.method-pill.active {
+  background: var(--m-color, var(--pink-500));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+.method-pill.active::before {
+  background: white;
+}
+.method-pill .pill-toggle {
+  font-size: 0.7rem;
+  background: var(--pink-50);
+  color: var(--pink-700);
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-left: 4px;
+}
+.method-pill.active .pill-toggle {
+  background: rgba(255,255,255,0.25);
+  color: white;
+}
+
+/* Chart area */
+.compare-chart-wrap {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.compare-hint {
+  font-size: 0.86rem;
+  color: var(--ink-500);
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Detail panel for selected methodology */
+.compare-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+.compare-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 22px;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  transition: opacity .3s;
+}
+.compare-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--m-color, var(--pink-500));
+}
+.compare-card h5 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-500);
+  margin: 0 0 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.compare-card h5 i { font-size: 1rem; }
+.compare-card.best h5 i { color: #10b981; }
+.compare-card.pros h5 i { color: var(--pink-500); }
+.compare-card.cons h5 i { color: #ef4444; }
+.compare-card ul { padding-left: 18px; margin: 0; }
+.compare-card li {
+  margin-bottom: 8px;
+  color: var(--ink-700);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.compare-card li::marker { color: var(--m-color, var(--pink-500)); }
+
+/* Heading row above the cards */
+.compare-current {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 16px 22px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.compare-current-name {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.compare-current-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--m-color, var(--pink-500));
+  flex-shrink: 0;
+}
+.compare-current-name strong {
+  font-size: 1.2rem;
+  color: var(--ink-900);
+}
+.compare-current-name span {
+  font-size: 0.88rem;
+  color: var(--ink-500);
+  font-style: italic;
+  display: block;
+}
+.compare-current-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.compare-current-tags .tag {
+  background: var(--pink-50);
+  color: var(--pink-700);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Bar chart view (alternative) */
+.compare-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 8px 4px;
+}
+.compare-bar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 60px;
+  align-items: center;
+  gap: 12px;
+}
+.compare-bar-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-700);
+  text-align: right;
+}
+.compare-bar-track {
+  height: 18px;
+  background: var(--ink-100);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+.compare-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--m-color, var(--pink-500));
+  transition: width 1s var(--ease-out);
+  position: relative;
+}
+.compare-bar-num {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-700);
+  text-align: left;
+}
+
+@media (max-width: 880px) {
+  .compare-detail { grid-template-columns: 1fr; gap: 14px; }
+  .compare-bar-row { grid-template-columns: 90px 1fr 48px; }
+}
+
+/* ---------- (kept) Original picker — now styled cleaner ---------- */
+.method-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  margin-bottom: 28px;
+  transition: all .3s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+.method-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--pink-200);
+}
+.method-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 6px; height: 100%;
+  background: var(--grad-pink);
+}
+.method-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.method-head h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.method-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.m-badge {
+  background: var(--pink-100);
+  color: var(--pink-700);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.method-sub {
+  color: var(--ink-500);
+  font-style: italic;
+  margin-bottom: 18px;
+}
+.m-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+.m-two-col h5 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pink-600);
+  margin-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+.m-two-col ul { padding-left: 1.2em; }
+.m-two-col li { margin-bottom: 6px; color: var(--ink-700); font-size: 0.95rem; }
+.m-two-col li::marker { color: var(--pink-500); }
+@media (max-width: 700px) { .m-two-col { grid-template-columns: 1fr; } }
+
+/* Picker (preserved) */
+.picker-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, #fff 0%, #fff5f9 100%);
+  border: 2px solid var(--pink-200);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  box-shadow: var(--shadow-md);
+}
+.picker-q { margin-bottom: 24px; }
+.picker-q p {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--ink-900);
+  font-size: 1.05rem;
+}
+.picker-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.picker-choice {
+  background: white;
+  border: 2px solid var(--pink-100);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--ink-700);
+  transition: all .2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+.picker-choice:hover { border-color: var(--pink-400); color: var(--pink-700); }
+.picker-choice.selected {
+  background: var(--grad-pink);
+  color: white;
+  border-color: transparent;
+}
+.picker-result {
+  margin-top: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  min-height: 90px;
+}
+.picker-result-empty { color: var(--ink-500); font-style: italic; }
+.picker-result h4 {
+  font-size: 1.4rem;
+  background: var(--grad-pink);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
