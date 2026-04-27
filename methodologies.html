@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Management Methodologies Compared · PM Éire</title>
+<meta name="description" content="Agile, Waterfall, Scrum, Kanban, or Hybrid? Compare project management methodologies and use our interactive picker to find the right fit for your small business or charity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/methodologies.css">
+</head>
+<body>
+
+<!-- Advanced animated background -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+  <svg class="bg-sparkles" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+    <g class="sparkle-group">
+      <circle class="sparkle s1" cx="120" cy="180" r="2"/>
+      <circle class="sparkle s2" cx="340" cy="90"  r="1.5"/>
+      <circle class="sparkle s3" cx="600" cy="240" r="2.5"/>
+      <circle class="sparkle s4" cx="880" cy="140" r="2"/>
+      <circle class="sparkle s5" cx="1080" cy="320" r="1.5"/>
+      <circle class="sparkle s6" cx="220" cy="520" r="2"/>
+      <circle class="sparkle s7" cx="500" cy="600" r="2.5"/>
+      <circle class="sparkle s8" cx="780" cy="480" r="2"/>
+      <circle class="sparkle s9" cx="1020" cy="660" r="1.5"/>
+      <circle class="sparkle s10" cx="150" cy="720" r="2"/>
+    </g>
+  </svg>
+</div>
+
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
+  <nav class="nav-container" aria-label="Main navigation">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">◐</span>
+      <span class="logo-text">PM <em>Éire</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fundamentals.html">Fundamentals</a></li>
+      <li><a href="methodologies.html" class="active">Methodologies</a></li>
+      <li><a href="ai-for-business.html" class="nav-highlight"><i class="fa-solid fa-sparkles"></i> AI for Your Business</a></li>
+      <li><a href="tools.html">Tools & Resources</a></li>
+      <li><a href="connect.html" class="nav-connect"><i class="fa-solid fa-paper-plane"></i> Connect</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<section class="page-hero">
+  <span class="eyebrow reveal">Chapter 2</span>
+  <h1 class="reveal">Pick a <em>methodology</em>.<br>Not a religion.</h1>
+  <p class="reveal">Agile purists and Waterfall diehards will tell you theirs is the one true way. For most Irish small businesses, that's nonsense. Pick the right tool for the job.</p>
+</section>
+
+<!-- INTERACTIVE COMPARE HUB -->
+<section class="section">
+  <div class="container" style="max-width: 1080px">
+    <div class="section-head">
+      <span class="eyebrow">Compare them visually</span>
+      <h2>Click any methodology to <em>add it to the chart</em>.</h2>
+      <p class="section-lead">Toggle methodologies on and off. Click a name in the legend (or its line on the chart) to focus its details below. Switch to "Single deep dive" to read its scores as bars.</p>
+    </div>
+
+    <div class="compare-hub reveal">
+      <div class="compare-hub-head">
+        <div>
+          <h3>Methodology comparison</h3>
+          <p>Six dimensions, scored from 1 (low) to 10 (high). Higher is better.</p>
+        </div>
+        <div class="compare-hub-toggle" id="compareToggle">
+          <button data-view="radar" class="active" type="button">Compare overlay</button>
+          <button data-view="bars" type="button">Single deep dive</button>
+        </div>
+      </div>
+
+      <div class="method-pills" id="methodPills"></div>
+
+      <div class="compare-chart-wrap">
+        <canvas id="compareCanvas"></canvas>
+      </div>
+      <div class="compare-bars" id="compareBars" style="display:none"></div>
+      <p class="compare-hint"><i class="fa-solid fa-circle-info"></i> Tip — click a legend item or a line/dot to focus on a methodology.</p>
+
+      <div class="compare-current" id="compareCurrent"></div>
+      <div class="compare-detail" id="compareDetail"></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK COMPARE TABLE (kept) -->
+<section class="section">
+  <div class="container prose" style="max-width: 900px">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Methodology</th>
+            <th>Best for</th>
+            <th>Flexible?</th>
+            <th>SME learning curve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Agile</strong></td><td>Unknown or changing requirements</td><td>Very</td><td>Medium</td></tr>
+          <tr><td><strong>Waterfall</strong></td><td>Fixed scope, regulated work, construction</td><td>Low</td><td>Low</td></tr>
+          <tr><td><strong>Scrum</strong></td><td>Small software or product teams</td><td>Medium</td><td>Medium to high</td></tr>
+          <tr><td><strong>Kanban</strong></td><td>Continuous flow (support, content, ops)</td><td>High</td><td>Very low</td></tr>
+          <tr><td><strong>Hybrid</strong></td><td>Most real Irish SMEs</td><td>High</td><td>Medium</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILED METHODS -->
+<section class="section section-alt">
+  <div class="container" style="max-width: 900px">
+    <div class="section-head">
+      <span class="eyebrow">Deep dive</span>
+      <h2>The five approaches, in plain English</h2>
+    </div>
+
+    <div class="method-card reveal">
+      <div class="method-head">
+        <h3>Agile</h3>
+        <div class="method-badges"><span class="m-badge">Flexible</span><span class="m-badge">Iterative</span></div>
+      </div>
+      <p class="method-sub">"We'll figure it out as we go, but properly."</p>
+      <p>Agile isn't really a methodology. It's a <strong>mindset</strong> built on four values: collaboration, working software (or deliverables) over documentation, customer partnership, and responding to change.</p>
+      <p>In practice, teams deliver value in small, fast increments (often called iterations or sprints), then review and adjust. Scrum and Kanban are the two most common ways to implement it.</p>
+      <div class="m-two-col">
+        <div>
+          <h5>Great for</h5>
+          <ul>
+            <li>Software and digital products</li>
+            <li>Marketing campaigns</li>
+            <li>Projects with changing customer needs</li>
+            <li>Creative work</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Watch out</h5>
+          <ul>
+            <li>Needs engaged stakeholders. No "throw it over the wall"</li>
+            <li>Harder to predict total cost/timeline upfront</li>
+            <li>Teams can drift without clear goals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card reveal">
+      <div class="method-head">
+        <h3>Waterfall</h3>
+        <div class="method-badges"><span class="m-badge">Sequential</span><span class="m-badge">Predictable</span></div>
+      </div>
+      <p class="method-sub">"Finish one phase completely before starting the next."</p>
+      <p>The oldest approach, born in the 1970s. Requirements, design, build, test, launch, then maintain. Going back to a previous phase is expensive, which is both its strength (forces discipline) and its weakness (no flexibility).</p>
+      <div class="m-two-col">
+        <div>
+          <h5>Great for</h5>
+          <ul>
+            <li>Construction and physical builds</li>
+            <li>Highly regulated projects (health, legal)</li>
+            <li>Fixed price client work with clear scope</li>
+            <li>Teams that want absolute clarity</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Watch out</h5>
+          <ul>
+            <li>Customer doesn't see anything until the end</li>
+            <li>Changes are costly</li>
+            <li>Risks pile up if testing is left to the final phase</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card reveal">
+      <div class="method-head">
+        <h3>Scrum</h3>
+        <div class="method-badges"><span class="m-badge">Agile framework</span><span class="m-badge">Sprints</span></div>
+      </div>
+      <p class="method-sub">"Small, repeating 2 week cycles, with defined roles and ceremonies."</p>
+      <p>The most popular way to "do Agile." Teams work in <strong>sprints</strong> of 1 to 4 weeks, with three defined roles (Scrum Master, Product Owner, Development Team) and four recurring meetings (sprint planning, daily standup, sprint review, retrospective).</p>
+      <div class="m-two-col">
+        <div>
+          <h5>Great for</h5>
+          <ul>
+            <li>Small software or product teams (5 to 9 people)</li>
+            <li>Teams that can dedicate time to ceremonies</li>
+            <li>Complex work with high uncertainty</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Watch out</h5>
+          <ul>
+            <li>Overkill for a 2 to 3 person team</li>
+            <li>Ceremonies can become ritual without the why</li>
+            <li>Roles can feel heavy in a small business</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card reveal">
+      <div class="method-head">
+        <h3>Kanban</h3>
+        <div class="method-badges"><span class="m-badge">Visual</span><span class="m-badge">Continuous flow</span></div>
+      </div>
+      <p class="method-sub">"Make work visible. Limit work in progress. Keep it flowing."</p>
+      <p>Originally from Toyota's factories. A Kanban board has columns, typically <em>To Do, Doing, Done</em>, and each task is a card that moves left to right. The magic is in <strong>WIP limits</strong>: you cap how many things can be "in progress" at once, which forces you to finish before starting.</p>
+      <p>The simplest, most SME friendly method. If you're starting from nothing, start here.</p>
+      <div class="m-two-col">
+        <div>
+          <h5>Great for</h5>
+          <ul>
+            <li>Continuous work (support, content, ops)</li>
+            <li>Small teams and solo operators</li>
+            <li>Remote/distributed teams</li>
+            <li>Charities juggling many small tasks</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Watch out</h5>
+          <ul>
+            <li>Less useful for big, deadline driven projects</li>
+            <li>Without WIP limits, it's just a to do list</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card reveal">
+      <div class="method-head">
+        <h3>Hybrid <span class="m-badge" style="background:var(--grad-pink); color:white">Most popular</span></h3>
+        <div class="method-badges"><span class="m-badge">Pragmatic</span></div>
+      </div>
+      <p class="method-sub">"Take the structure of Waterfall, the flexibility of Agile, and ignore the purists."</p>
+      <p>The fastest growing approach, up <strong>57.5% since 2020</strong>. Most real Irish SMEs end up here naturally. Typical hybrid: Waterfall style planning (fixed budget, fixed deadline), then Scrum or Kanban during execution so the team can adapt.</p>
+      <p><strong>Scrumban</strong> is a popular hybrid. Scrum's sprint cycles combined with Kanban's visual workflow and WIP limits.</p>
+      <div class="m-two-col">
+        <div>
+          <h5>Great for</h5>
+          <ul>
+            <li>Client projects with fixed budgets</li>
+            <li>Grant funded charity programmes</li>
+            <li>Marketing + product launch combinations</li>
+            <li>Any team with mixed project types</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Watch out</h5>
+          <ul>
+            <li>Needs a clear owner, or it can become "we do whatever we like"</li>
+            <li>Document your chosen approach so new staff don't drown</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PICKER -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Interactive picker</span>
+      <h2>Not sure which fits? <em>Answer 4 questions.</em></h2>
+    </div>
+
+    <div class="picker-card reveal">
+
+      <div class="picker-q">
+        <p>1. What kind of project is this?</p>
+        <div class="picker-choices" data-q="type">
+          <button class="picker-choice" data-val="creative">Creative / marketing / product</button>
+          <button class="picker-choice" data-val="physical">Physical / construction / event</button>
+          <button class="picker-choice" data-val="ops">Ongoing ops / service / content</button>
+          <button class="picker-choice" data-val="client">Client work with fixed scope</button>
+        </div>
+      </div>
+
+      <div class="picker-q">
+        <p>2. How clear are the requirements?</p>
+        <div class="picker-choices" data-q="clarity">
+          <button class="picker-choice" data-val="fuzzy">Fuzzy — we'll figure it out</button>
+          <button class="picker-choice" data-val="medium">Mostly clear, some unknowns</button>
+          <button class="picker-choice" data-val="locked">Locked down, don't touch</button>
+        </div>
+      </div>
+
+      <div class="picker-q">
+        <p>3. How big is the team?</p>
+        <div class="picker-choices" data-q="size">
+          <button class="picker-choice" data-val="solo">1–2 (solo / pair)</button>
+          <button class="picker-choice" data-val="small">3–7 people</button>
+          <button class="picker-choice" data-val="mid">8–20 people</button>
+        </div>
+      </div>
+
+      <div class="picker-q">
+        <p>4. Deadline pressure?</p>
+        <div class="picker-choices" data-q="deadline">
+          <button class="picker-choice" data-val="hard">Hard external deadline</button>
+          <button class="picker-choice" data-val="soft">Soft — aim for a quarter</button>
+          <button class="picker-choice" data-val="none">No fixed deadline, continuous</button>
+        </div>
+      </div>
+
+      <div class="picker-result" id="pickerResult">
+        <p class="picker-result-empty">Answer all four questions to see your recommendation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div style="height:80px"></div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo logo-footer">
+        <span class="logo-mark">◐</span>
+        <span class="logo-text">PM <em>Éire</em></span>
+      </a>
+      <p>Practical project management for small businesses and charities in Ireland.</p>
+    </div>
+    <div>
+      <h4>Guide</h4>
+      <ul>
+        <li><a href="fundamentals.html">Fundamentals</a></li>
+        <li><a href="methodologies.html">Methodologies</a></li>
+        <li><a href="ai-for-business.html">AI for business</a></li>
+        <li><a href="tools.html">Tools & resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For Irish SMEs</h4>
+      <ul>
+        <li><a href="#" onclick="return false;">Local Enterprise Office</a></li>
+        <li><a href="#" onclick="return false;">Charity regulator</a></li>
+        <li><a href="#" onclick="return false;">GDPR for small teams</a></li>
+        <li><a href="references.html">Sources &amp; references</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in touch</h4>
+      <ul class="socials">
+        <li><a href="https://www.linkedin.com/in/divyanshranaa" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://divyanshranaa.my.canva.site/project-manager" target="_blank" rel="noopener" aria-label="Portfolio"><i class="fa-solid fa-globe"></i></a></li>
+        <li><a href="mailto:ranadivyansh33@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-base container">
+    <p>© 2026 PM Éire. Made with <i class="fa-solid fa-heart" style="color:#ec4899"></i> in Ireland. <a href="references.html">Sources &amp; references</a>.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/methodologies.js"></script>
+<script>
+(function () {
+  const answers = {};
+  document.querySelectorAll('.picker-choices').forEach(group => {
+    const q = group.dataset.q;
+    group.querySelectorAll('.picker-choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.picker-choice').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        answers[q] = btn.dataset.val;
+        evaluate();
+      });
+    });
+  });
+
+  function evaluate() {
+    const need = ['type', 'clarity', 'size', 'deadline'];
+    if (!need.every(k => answers[k])) return;
+
+    let rec, why;
+
+    // Rules
+    if (answers.type === 'ops' || answers.deadline === 'none') {
+      rec = 'Kanban';
+      why = "You've got continuous, flowing work, not a one off project with a finish line. Kanban's visual board plus WIP limits will keep things sane without ceremony overhead.";
+    } else if (answers.type === 'physical' && answers.clarity === 'locked') {
+      rec = 'Waterfall';
+      why = "Physical/construction work with locked-down requirements is exactly what Waterfall was built for. The sequential phases protect you from costly rework.";
+    } else if (answers.type === 'client' && answers.clarity !== 'fuzzy') {
+      rec = 'Hybrid (Waterfall + Scrum or Kanban)';
+      why = "Classic Irish SME client work: fixed budget and scope, but you want flexibility to adapt mid-project. Plan in Waterfall style, execute in sprints.";
+    } else if (answers.type === 'creative' && answers.size !== 'solo' && answers.clarity === 'fuzzy') {
+      rec = 'Scrum';
+      why = 'Creative/product work with a real team (3+) and genuine uncertainty benefits from Scrum ceremonies — sprint planning, review and retro force regular course-corrections.';
+    } else if (answers.size === 'solo') {
+      rec = 'Kanban';
+      why = "For solo or pair operators, Scrum ceremonies are overkill. Use a 3-column Kanban board (To do / Doing / Done) with a WIP limit of 2–3. Simple, fast, done.";
+    } else if (answers.clarity === 'fuzzy') {
+      rec = 'Agile (Scrum or Kanban)';
+      why = "When the path isn't clear, you need short feedback loops. Pick Scrum if you want structure, Kanban if you want maximum flexibility.";
+    } else {
+      rec = 'Hybrid';
+      why = "The most honest answer for your mix. Waterfall-style plan to set the budget and milestones, Scrum or Kanban-style execution so you can adapt week-to-week.";
+    }
+
+    const box = document.getElementById('pickerResult');
+    box.innerHTML = `
+      <h4>Our pick: ${rec}</h4>
+      <p>${why}</p>
+      <p style="font-size:.9rem; color:var(--ink-500); margin-top:10px;">
+        Now pair it with the right tool — see our <a href="tools.html">Tools & Resources</a> page.
+      </p>
+    `;
+  }
+})();
+</script>
+</body>
+</html>

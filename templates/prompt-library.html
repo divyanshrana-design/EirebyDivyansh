@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Library Starter · PM Éire</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.prompt-wrap {
+  max-width: 960px;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+.prompt-intro {
+  background: white;
+  padding: 28px;
+  border-radius: 8px;
+  border: 1px solid #e8eaed;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.08);
+}
+.prompt-intro h1 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #ec4899;
+  margin-bottom: 8px;
+}
+.prompt-intro p { color: #5f6368; font-size: 0.95rem; }
+.cat-block {
+  background: white;
+  padding: 24px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #e8eaed;
+  box-shadow: 0 1px 3px rgba(60,64,67,0.08);
+}
+.cat-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ec4899;
+}
+.cat-title .icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: #fce4ec;
+  color: #831843;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.cat-title h3 {
+  font-size: 1.15rem;
+  color: #831843;
+  font-weight: 600;
+  margin: 0;
+}
+.prompt-card {
+  background: #fafafa;
+  border: 1px solid #e8eaed;
+  border-left: 3px solid #ec4899;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.prompt-card h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #202124;
+  margin-bottom: 6px;
+}
+.prompt-card .prompt-text {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 0.82rem;
+  color: #3c4043;
+  white-space: pre-wrap;
+  background: white;
+  padding: 10px 12px;
+  border-radius: 4px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+.copy-prompt {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: white;
+  border: 1px solid #ec4899;
+  color: #ec4899;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.copy-prompt:hover { background: #ec4899; color: white; }
+.copy-prompt.copied { background: #137333; color: white; border-color: #137333; }
+</style>
+</head>
+<body class="gsheet-wrap">
+
+<div class="gdoc-bar">
+  <div class="gdoc-logo">D</div>
+  <div class="gdoc-title">
+    <strong>Prompt Library Starter · 30 prompts</strong>
+    <small>Google Docs · Copy paste into Claude, ChatGPT, Gemini or Copilot</small>
+  </div>
+  <a href="../tools.html#templates" class="back-link">← Back to PM Éire</a>
+  <button class="copy-btn" onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<div class="prompt-wrap">
+
+<div class="prompt-intro">
+  <h1>Prompt Library Starter</h1>
+  <p>30 copy paste prompts for the jobs Irish small teams actually do every week. Each prompt is tuned to produce practical, Irish context aware output. Replace anything in <code>[SQUARE BRACKETS]</code> with your own info before sending.</p>
+</div>
+
+<!-- 1. PROJECT PLANNING -->
+<div class="cat-block">
+  <div class="cat-title">
+    <div class="icon">📋</div>
+    <h3>1. Project planning (6 prompts)</h3>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>1.1 Turn a vague idea into a phased project plan</h4>
+    <div class="prompt-text">You are an experienced project manager for Irish SMEs. I want to run [PROJECT IDEA, e.g. "an autumn fundraising drive to raise €15,000"]. Give me a phased plan using the 5 phases of PM (initiation, planning, execution, monitoring, closing). For each phase list 3 to 5 specific tasks with rough timelines. Assume a team of 4 with a 3 month window. Use plain English, no corporate jargon.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>1.2 Draft a one page project charter</h4>
+    <div class="prompt-text">Using the notes below, draft a one page project charter with these sections: problem, goal, in scope, out of scope, budget table, top 3 risks, key dates, roles, approval block. Keep it under 500 words. Notes: [PASTE YOUR NOTES]</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>1.3 Generate a work breakdown structure</h4>
+    <div class="prompt-text">Break the following project into a work breakdown structure with phases, deliverables and specific tasks. Include owner suggestion and rough duration for each task. Project: [DESCRIBE PROJECT]. Team size: [X people]. Deadline: [DATE].</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>1.4 Identify project risks</h4>
+    <div class="prompt-text">For this project: [DESCRIBE PROJECT], list the 10 most likely risks a small Irish SME or charity would face. For each risk give likelihood (1-5), impact (1-5), and one practical mitigation. Format as a table.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>1.5 Build a stakeholder map</h4>
+    <div class="prompt-text">For this project: [DESCRIBE PROJECT] in Ireland, list likely stakeholders and plot each on a power vs. interest matrix. For each, recommend a communication cadence (daily, weekly, monthly, ad hoc).</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>1.6 Estimate a realistic budget</h4>
+    <div class="prompt-text">For a [TYPE OF PROJECT] in Ireland with [DESCRIPTION], give me a realistic budget in euros. Break it into categories, add a 10% contingency, and flag the 2 or 3 items where people typically underestimate.</div>
+  </div>
+</div>
+
+<!-- 2. CLIENT & FUNDER COMMS -->
+<div class="cat-block">
+  <div class="cat-title">
+    <div class="icon">✉️</div>
+    <h3>2. Client and funder communications (6 prompts)</h3>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>2.1 Chase a late invoice politely but firmly</h4>
+    <div class="prompt-text">Write a polite but firm email chasing [CLIENT NAME] for invoice [INVOICE NUMBER] for €[AMOUNT] which is now [X days] overdue. Offer two versions, one softer, one firmer. Irish business tone. Leave a [YOUR NAME] placeholder.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>2.2 Decline a scope request without losing the client</h4>
+    <div class="prompt-text">Write a short email declining this client request: [DESCRIBE REQUEST]. Explain why it is out of scope, offer a paid change request option, keep the relationship warm. Under 150 words.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>2.3 Update a funder on a delay</h4>
+    <div class="prompt-text">Write a transparent email to our funder [FUNDER] explaining that project [PROJECT NAME] will deliver [X weeks] later than planned due to [REASON]. Show what we have learned, what we are doing to recover, and ask for their input. Honest, respectful, no corporate fluff.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>2.4 Draft a weekly status update</h4>
+    <div class="prompt-text">Using these notes from my week: [PASTE NOTES], write a weekly status update with RAG status (green, amber, red) for schedule, budget, scope and team, 3 to 5 bullets of what we did, 3 to 5 bullets of what we do next, blockers and decisions needed. 250 words maximum.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>2.5 Write a board paper summary</h4>
+    <div class="prompt-text">Summarise this [NUMBER] page document into a one page board paper for a small Irish charity. Use these headings: context, options considered, recommendation, risks, decision required. Document: [PASTE OR ATTACH]</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>2.6 Reply to a complaint</h4>
+    <div class="prompt-text">Draft an empathetic, professional response to this complaint from a [CUSTOMER or SERVICE USER]. Acknowledge the issue, explain what we will do, commit to a timeline, offer a way to escalate if they are not happy. Complaint: [PASTE COMPLAINT].</div>
+  </div>
+</div>
+
+<!-- 3. MEETINGS & NOTES -->
+<div class="cat-block">
+  <div class="cat-title">
+    <div class="icon">🎙️</div>
+    <h3>3. Meetings and notes (6 prompts)</h3>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>3.1 Turn transcript into actions</h4>
+    <div class="prompt-text">Here is the transcript of our team meeting: [PASTE TRANSCRIPT]. Give me: 1) a 3 sentence summary, 2) a list of decisions made, 3) a clear action list with owner and due date for each, 4) any questions that were raised but not answered.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>3.2 Draft a 30 minute agenda</h4>
+    <div class="prompt-text">Draft a tight 30 minute agenda for a meeting about [TOPIC] with [ATTENDEES]. Include time for each item, a pre read suggestion, and a decision log at the end.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>3.3 Prepare for a difficult conversation</h4>
+    <div class="prompt-text">I need to have a difficult conversation with [WHO] about [TOPIC]. Give me 3 opening lines, 3 likely pushbacks and how to handle each, and one line I can use to end the conversation well regardless of outcome.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>3.4 Summarise for someone who missed the meeting</h4>
+    <div class="prompt-text">Summarise these meeting notes for [PERSON WHO MISSED IT] in their role as [ROLE]. Focus only on what they need to know and what is expected of them. Max 150 words. Notes: [PASTE]</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>3.5 Draft follow up email after the meeting</h4>
+    <div class="prompt-text">Based on these meeting notes: [PASTE], draft a 3 line follow up email I can send to all attendees. Include: 1 line recap, 3 bullet actions with owners, one question to keep the momentum going.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>3.6 Generate discussion questions</h4>
+    <div class="prompt-text">Give me 5 good discussion questions to ask our team about [TOPIC]. They should open up real conversation, not be answered yes or no, and be specific enough to lead somewhere useful.</div>
+  </div>
+</div>
+
+<!-- 4. GRANT WRITING -->
+<div class="cat-block">
+  <div class="cat-title">
+    <div class="icon">🎯</div>
+    <h3>4. Grant writing (6 prompts)</h3>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>4.1 Summarise grant guidelines</h4>
+    <div class="prompt-text">Here are the guidelines for [GRANT NAME]: [PASTE]. Summarise: 1) who is eligible, 2) key dates, 3) maximum amount, 4) what they fund and do not fund, 5) any non obvious requirements. Plain English.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>4.2 Draft a compelling need statement</h4>
+    <div class="prompt-text">Draft a 200 word need statement for a grant application to [FUNDER] for our project [PROJECT]. Our context: [2 or 3 sentences]. Evidence I can cite: [STATS OR SOURCES]. Warm, specific, not generic.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>4.3 Build the project plan section</h4>
+    <div class="prompt-text">Using the following project brief: [PASTE], write the "project plan and methodology" section of a grant application. Include activities, outputs and outcomes in a clear logical flow. Around 500 words.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>4.4 Generate monitoring and evaluation plan</h4>
+    <div class="prompt-text">Draft a simple M&amp;E plan for this project: [DESCRIBE]. Include 4 to 6 measurable indicators, how each will be measured, how often, and who is responsible. Realistic for a small Irish charity, not PhD level.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>4.5 Reuse a winning proposal</h4>
+    <div class="prompt-text">Here is a grant application we won last year: [PASTE]. We are now applying to [NEW FUNDER] for [NEW PROJECT]. Rewrite the strongest sections to fit the new context without being obviously copy pasted. Flag anything I need to update with current numbers.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>4.6 Write a thank you to a funder</h4>
+    <div class="prompt-text">Write a short, sincere thank you note to [FUNDER] for awarding us [AMOUNT] for [PROJECT]. Mention one specific thing we plan to do with the money. Warm but professional. Under 100 words.</div>
+  </div>
+</div>
+
+<!-- 5. MARKETING & SOCIAL -->
+<div class="cat-block">
+  <div class="cat-title">
+    <div class="icon">📣</div>
+    <h3>5. Marketing and social (6 prompts)</h3>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>5.1 Generate a month of social posts</h4>
+    <div class="prompt-text">We are a [TYPE OF BUSINESS OR CHARITY] in [LOCATION]. Our key message this month is [MESSAGE]. Draft 20 on brand social posts for Instagram and LinkedIn. Mix of educational, behind the scenes, promotional and community. Include suggested images or visuals for each.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>5.2 Turn a blog post into 10 social posts</h4>
+    <div class="prompt-text">Here is a blog post: [PASTE]. Turn it into 10 separate social posts, each standalone, with a different angle. Include at least 2 quote cards, 2 listicles, 1 question post, 1 statistic highlight. Tone: conversational, Irish.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>5.3 Write a press release</h4>
+    <div class="prompt-text">Write a press release about [NEWS]. Target: Irish local and national press. Include: standard "FOR IMMEDIATE RELEASE" header, 3 paragraph body, 1 quote from [NAME], boilerplate about the organisation, media contact. Active voice, 400 words maximum.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>5.4 Draft a newsletter</h4>
+    <div class="prompt-text">Draft our monthly newsletter based on these updates: [PASTE]. Structure: punchy intro, 3 to 5 highlight stories (around 80 words each), a call to action, a thank you. Warm, conversational, not corporate.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>5.5 Improve a piece of copy</h4>
+    <div class="prompt-text">Here is a piece of copy: [PASTE]. Rewrite it to be more direct, specific and active. Remove jargon. Keep it under [WORD COUNT] words. Tone: friendly, confident, Irish English.</div>
+  </div>
+
+  <div class="prompt-card">
+    <button class="copy-prompt" onclick="copyPrompt(this)">Copy</button>
+    <h4>5.6 Generate hashtag and caption variations</h4>
+    <div class="prompt-text">For this post: [PASTE], give me 5 caption variations (short, medium, with question, with quote, story led) and 10 hashtag combinations relevant to [INDUSTRY] in Ireland.</div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const text = btn.parentElement.querySelector('.prompt-text').innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 1500);
+  });
+}
+</script>
+
+</body>
+</html>
