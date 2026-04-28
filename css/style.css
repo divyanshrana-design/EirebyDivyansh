@@ -460,11 +460,27 @@ em { font-style: italic; }
 }
 .btn-outline .ripple { background: rgba(236, 72, 153, 0.3); }
 
-.btn-light {
-  background: white;
-  color: var(--pink-700);
+.btn-light,
+.btn-light:hover,
+.btn-light:focus,
+.btn-light:active,
+.btn.btn-light,
+.btn-primary.btn-light,
+.btn-primary.btn-light:hover {
+  background: white !important;
+  color: var(--pink-700) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
-.btn-light:hover { color: var(--pink-800); transform: translateY(-2px); }
+.btn-light:hover {
+  color: var(--pink-800) !important;
+  background: #fff5f9 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.22);
+}
+.btn-light i { color: var(--pink-600) !important; }
+.btn-light:hover i { color: var(--pink-700) !important; }
+/* Make sure the dark-pink ::before overlay from .btn-primary doesn't show through .btn-light */
+.btn-primary.btn-light::before { display: none !important; }
 
 /* Magnetic class applied by JS — the transform is added inline */
 .magnetic { transition: transform .2s var(--ease-out); }
@@ -888,10 +904,27 @@ em { font-style: italic; }
 .path-card:hover .path-go { gap: 12px; }
 
 .path-card-hero {
-  background: linear-gradient(135deg, #fff 0%, #fff5f9 100%);
-  border: 2px solid var(--pink-300);
+  background: var(--grad-pink);
+  border: 2px solid var(--pink-600);
+  color: white;
+  box-shadow: 0 14px 36px rgba(236, 72, 153, 0.35);
 }
-.path-card-hero .path-num { color: var(--pink-400); }
+.path-card-hero h3,
+.path-card-hero > p,
+.path-card-hero p,
+.path-card-hero li,
+.path-card-hero .path-go,
+.path-card-hero .path-go i { color: white; }
+.path-card-hero:hover .path-num { color: white; }
+.path-card-hero .path-list li i { color: rgba(255, 255, 255, 0.9); }
+.path-card-hero .path-num { color: rgba(255, 255, 255, 0.55); }
+.path-card-hero .path-ribbon {
+  background: white;
+  color: var(--pink-700);
+}
+.path-card-hero:hover {
+  box-shadow: 0 22px 50px rgba(236, 72, 153, 0.5);
+}
 .path-ribbon {
   position: absolute;
   top: 16px; right: 16px;
@@ -1156,6 +1189,18 @@ em { font-style: italic; }
   z-index: 2;
 }
 .media-thumb-img::after { display: none; }
+.media-thumb-badge-play {
+  width: 60px !important;
+  height: 60px !important;
+  font-size: 1.6rem !important;
+  bottom: 50% !important;
+  right: 50% !important;
+  transform: translate(50%, 50%);
+  transition: transform .25s var(--ease-out);
+}
+.media-card:hover .media-thumb-badge-play {
+  transform: translate(50%, 50%) scale(1.12);
+}
 .media-body { padding: 26px; }
 .media-tag {
   display: inline-block;
